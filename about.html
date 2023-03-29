@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Navigation Icon Demo</title>
+	<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"> </link>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+	
+    
+	<style>
+	    *{
+	        margin:0;
+	        padding:0;
+	    }
+nav {
+	background-color: #333;
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	padding: 0 50px;
+}
+
+.logo a {
+	color: white;
+	font-size: 1rem;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.menu ul {
+	display: flex;
+}
+
+.menu li {
+	list-style: none;
+	margin-left: 20px;
+}
+
+.menu a {
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.menu-icon {
+	cursor: pointer;
+	color: white;
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.menu-icon {
+		display: block;
+	}
+
+	.menu {
+		position: absolute;
+		top: 40px;
+		left: 0;
+		background-color: #333;
+		width: 100%;
+		height: 0;
+		overflow: hidden;
+		transition: height 0.3s ease;
+	}
+
+	.menu.active {
+		height: 200px;
+	}
+
+	.menu ul {
+		flex-direction: column;
+	}
+
+	.menu li {
+		margin: 10px 20px;
+	}
+
+	.menu a {
+		font-size: 1.2rem;
+	}
+
+}
+
+body{
+  background-color: #EFEFEF;
+  font-family: 'Ubuntu', sans-serif;
+}
+.card_div{
+    dsiplay:flex;
+    align-items:center;
+    justify-content:center;
+}
+.card{
+  border-radius: 25px;
+  background-color: #FFF;
+  margin:30px;
+}
+@media (min-width: 800px){
+.card_div{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:scroll;
+}
+}
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #4070F4;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #4070F4;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #4070F4;
+}
+.name{
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+.description{
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+.button{
+  border: none;
+  font-size: 16px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #4070F4;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #265DF2;
+}
+
+.swiper-navBtn{
+  color: #6E93f7;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: #4070F4;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 35px;
+}
+.swiper-button-next{
+  right: 0;
+}
+.swiper-button-prev{
+  left: 0;
+}
+.swiper-pagination-bullet{
+  background-color: #6E93f7;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: #4070F4;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+}
+.welcome-section {
+  background-image: url('images/image1.jpeg');
+  background-size: cover;
+  background-color: #f9f9f9;
+  padding: 50px;
+  color:white;
+  height:100%;
+  text-align: center;
+}
+
+.container2 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container2 h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.container2 p {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.about-section {
+  background-color: black;
+  background-size: cover;
+  opacity:0.8;
+  background-position: center center;
+  padding: 50px;
+  
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color:white;
+}
+
+.about-content p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color:white;
+}
+
+
+
+.teacher-card {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px 0;
+  margin-left:10%;
+  margin-top:50px;
+  margin-bottom:20px;
+  width: 75%;
+  font-size:10px;
+}
+
+.teacher-card img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 2%;
+  margin-right: 20px;
+}
+
+.teacher-details {
+  flex: 1;
+}
+
+.teacher-details h2 {
+  margin: 0;
+}
+
+.teacher-details h3 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.teacher-details p {
+  margin: 0;
+}
+
+.teacher-info {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.teacher-info li {
+  margin-bottom: 5px;
+}
+
+.teacher-info li strong {
+  margin-right: 5px;
+}
+footer {
+  background-image: url('images/image1.jpeg');
+  opacity:0.8;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 50px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-links li a {
+  color: #fff;
+  font-size: 24px;
+}
+
+.social-links li a:hover {
+  color: #ccc;
+}
+
+
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+}
+
+
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="menu-icon">
+			<i class="fa fa-bars fa-2x"></i>
+		</div>
+		<div class="logo">
+			<a href="#">Study with Manoj Kumar</a>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="#">Contacts</a></li>
+				<li><a href="#">Prices</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="welcome-section">
+  <div class="container2">
+    <h1>Welcome to our website!</h1>
+    <p>We are a team of passionate individuals dedicated to providing the best service possible. Our goal is to make your experience with us as enjoyable and efficient as possible.</p>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-content">
+    <h2>About Us</h2>
+    <p>Welcome to our website, where you can find all the information you need about our company and the services we offer. We specialize in providing high-quality products and services to our clients, and we are committed to exceeding your expectations.</p>
+    <p>With years of experience in the industry, we have the expertise and knowledge to deliver top-notch solutions that are tailored to your specific needs. Whether you need help with web design, digital marketing, or software development, we've got you covered.</p>
+    <p>Our team of professionals is dedicated to providing you with excellent service and support, and we are always here to answer any questions you may have. We value our customers and strive to build long-lasting relationships based on trust and mutual respect.</p>
+  </div>
+</section>
+
+
+<div class="teacher-card">
+  <img src="images/image1.jpeg" alt="Teacher's Avatar">
+  <div class="teacher-details">
+    <h2>John Doe</h2>
+    <h3>Mathematics Teacher</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus, erat quis ultricies mollis, velit velit aliquam eros, eget malesuada quam erat vel libero.</p>
+    <ul class="teacher-info">
+      <li><strong>Email:</strong> john.doe@email.com</li>
+      <li><strong>Phone:</strong> (123) 456-7890</li>
+      <li><strong>Office Hours:</strong> Mondays, Wednesdays, and Fridays 2pm-4pm</li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+<style>
+#search-input {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: none;
+	border-bottom: 2px solid #ccc;
+}
+.item img {
+	width: 80%;
+	margin: 10px 10px;
+	object-fit: cover;
+	cursor: pointer;
+	border-radius:10px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.item h2 {
+	font-size: 20px;
+	color: white;
+	text-shadow: 2px 2px 4px black;
+}
+
+.item p {
+	font-size: 15px;
+	color: white;
+	text-shadow: 2px 2px 4px black;
+	line-height: 1.5;
+}
+.subscribe-button {
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  margin-top:6px;
+  padding: 7px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+#video{
+     width:95%;
+     height:200px;
+     border-radius:5px;
+}
+.main_div{
+     max-width:800px;
+     margin:5px 10%;
+}
+
+</style>
+<input type="text" id="search-input" placeholder="Search Our Lectures...">
+<div class="main_div">
+<div id="container" class="cont">
+  <div class="item">
+    <img src="images/Matrix class 12.png" alt="Image 1">
+   
+    </video>
+    <h2 class="title">Matrices class 12</h2>
+    <p class="description">ludus dolor quaestio accusata montes mei praesent purus suavitate eratcubilia reprimique netus lobortis error tempor in veritus nascetur platonem</p>
+    <a href="https://youtube.com/playlist?list=PLhR03kFzFE62_q7aM-n5Yzges3WQnb75i"><button class="subscribe-button">Visit Video</button></a>
+  </div>
+  <div class="item">
+    <img src="images/Integration.png" alt="Image 1">
+    <h2 class="title">Integration class 12</h2>
+    <p class="description">ludus dolor quaestio accusata montes mei praesent purus suavitate eratcubilia reprimique netus lobortis error tempor in veritus nascetur platonem</p>
+    <a href="https://youtube.com/playlist?list=PLhR03kFzFE63FiGkjwLwTwmZ1Vv4rnxEk"><button class="subscribe-button">Visit Video</button></a>
+  </div>
+  <div class="item">
+    <img src="images/DIFFERENTIAtion.png" alt="Image 1">
+    <h2 class="title">Differentiation class 12</h2>
+    <p class="description">ludus dolor quaestio accusata montes mei praesent purus suavitate eratcubilia reprimique netus lobortis error tempor in veritus nascetur platonem</p>
+    <a href="https://youtube.com/playlist?list=PLhR03kFzFE62SlQDbhj0j0yJQ0WJgCvdi"><button class="subscribe-button">Visit Video</button></a>
+  </div>
+  <div class="item">
+    <img src="images/Binomial Theorem shortcut.png" alt="Image 1">
+    <h2 class="title">Binomial Theorem class 10</h2>
+    <p class="description">ludus dolor quaestio accusata montes mei praesent purus suavitate eratcubilia reprimique netus lobortis error tempor in veritus nascetur platonem</p>
+    <a href="https://youtube.com/playlist?list=PLhR03kFzFE61D3rer4jJXPcVVvXEq2X3C"><button class="subscribe-button">Visit Video</button></a>
+  </div>
+  <div class="item">
+    <img src="images/application of derivatives.png" alt="Image 1">
+    <h2 class="title">Application of Derivatives class 12</h2>
+    <p class="description">ludus dolor quaestio accusata montes mei praesent purus suavitate eratcubilia reprimique netus lobortis error tempor in veritus nascetur platonem</p>
+    <a href="https://youtube.com/playlist?list=PLhR03kFzFE60-jllkLNhI2EKlYu6-BPcB"><button class="subscribe-button">Visit Video</button></a>
+  </div>
+  <div class="item">
+    <img src="images/circles.png" alt="Image 1">
+    <h2 class="title">Circles class 10</h2>
+    <p class="description">ludus dolor quaestio accusata montes mei praesent purus suavitate eratcubilia reprimique netus lobortis error tempor in veritus nascetur platonem</p>
+    <a href="https://youtube.com/playlist?list=PLhR03kFzFE61xpVQyKxP9RmAYQPDVUlLS"><button class="subscribe-button">Visit Video</button></a>
+  </div>
+  <div class="item">
+    <img src="images/conic sections shorts trick.png" alt="Image 1">
+    <h2 class="title">Conic Sections class 10</h2>
+    <p class="description">ludus dolor quaestio accusata montes mei praesent purus suavitate eratcubilia reprimique netus lobortis error tempor in veritus nascetur platonem</p>
+    <a href="https://youtube.com/playlist?list=PLhR03kFzFE60K173DRkV1RU7WMZnIcaZT"><button class="subscribe-button">Visit Video</button></a>
+  </div>
+  <div class="item">
+    <img src="images/differential equations.png" alt="Image 1">
+    <h2 class="title">Differential Equations class 12</h2>
+    <p class="description">ludus dolor quaestio accusata montes mei praesent purus suavitate eratcubilia reprimique netus lobortis error tempor in veritus nascetur platonem</p>
+    <a href="https://youtube.com/playlist?list=PLhR03kFzFE60hbm7wrmdaqR4m-CIP4SLm"><button class="subscribe-button">Visit Video</button></a>
+  </div>
+</div>
+</div>
+
+
+
+
+<style>
+    .our_team{
+        text-align:center;
+        width:100%;
+    }
+</style>
+                 <div class="our_team">
+                     <h2>Our Team</h2>
+                 </div>
+                 <div class="card_div">
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="images/Manoj_sir_img.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">David Dell</h2>
+                            <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                            <button class="button">View More</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <!--<img src="images/profile7.jpg" alt="" class="card-img">-->
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">David Dell</h2>
+                            <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                            <button class="button">View More</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <!--<img src="images/profile8.jpg" alt="" class="card-img">-->
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">David Dell</h2>
+                            <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                            <button class="button">View More</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <!--<img src="images/profile9.jpg" alt="" class="card-img">-->
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">David Dell</h2>
+                            <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                            <button class="button">View More</button>
+                        </div>
+                  </div>
+                 </div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-row">
+      <div class="footer-col">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p>123 Main Street, Anytown USA</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: info@example.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <ul class="social-links">
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+    <!-- Swiper JS -->
+      <!--Uncomment this line-->
+    <!--<script src="js/swiper-bundle.min.js"></script>-->
+
+    <!-- JavaScript -->
+      <!--Uncomment this line-->
+    <!--<script src="js/script.js"></script>-->
+
+
+
+	<script>
+const menuIcon = document.querySelector('.menu-icon');
+const menu = document.querySelector('.menu');
+
+menuIcon.addEventListener('click', () => {
+	menu.classList.toggle('active');
+});
+
+
+
+
+
+
+const searchInput = document.getElementById("search-input");
+const container = document.getElementById("container");
+
+searchInput.addEventListener("keyup", function() {
+  const filter = searchInput.value.toUpperCase();
+  const items = container.getElementsByClassName("item");
+
+  for (let i = 0; i < items.length; i++) {
+    const title = items[i].getElementsByClassName("title")[0];
+    const txtValue = title.textContent || title.innerText;
+
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      items[i].style.display = "";
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+});
+
+
+
+ 
+
+
+	</script>
+</body>
+</html>
